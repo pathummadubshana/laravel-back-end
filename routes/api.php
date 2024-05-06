@@ -18,12 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('customer/create','CustomerController@store');
-Route::put('customer/edit','CustomerController@update');
-Route::delete('customer/delete','CustomerController@destroy');
+Route::post('owner/customer/add',[\App\Http\Controllers\CustomerController::class, 'store']);
+Route::put('manager/item/update{id}',[\App\Http\Controllers\CustomerController::class, 'update']);
+Route::delete('manager/item/delete{id}',[\App\Http\Controllers\CustomerController::class, 'destroy']);
 
-Route::post('item/create','ItemController@store');
-Route::put('item/edit','ItemController@update');
-Route::delete('item/delete','ItemController@destroy');
+Route::post('owner/item/add',[\App\Http\Controllers\ItemController::class, 'store']);
+Route::put('manager/item/update{id}',[\App\Http\Controllers\CustomerController::class, 'update']);
+Route::delete('manager/item/delete{id}',[\App\Http\Controllers\CustomerController::class, 'destroy']);
 
 
