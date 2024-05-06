@@ -19,11 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('owner/customer/add',[\App\Http\Controllers\CustomerController::class, 'store']);
-Route::put('manager/item/update{id}',[\App\Http\Controllers\CustomerController::class, 'update']);
-Route::delete('manager/item/delete{id}',[\App\Http\Controllers\CustomerController::class, 'destroy']);
+Route::put('manager/custom/update{id}',[\App\Http\Controllers\CustomerController::class, 'update']);
+Route::delete('manager/custom/delete{id}',[\App\Http\Controllers\CustomerController::class, 'destroy']);
 
 Route::post('owner/item/add',[\App\Http\Controllers\ItemController::class, 'store']);
-Route::put('manager/item/update{id}',[\App\Http\Controllers\CustomerController::class, 'update']);
-Route::delete('manager/item/delete{id}',[\App\Http\Controllers\CustomerController::class, 'destroy']);
+Route::put('manager/item/update{id}',[\App\Http\Controllers\ItemController::class, 'update']);
+Route::delete('manager/item/delete{id}',[\App\Http\Controllers\ItemController::class, 'destroy']);
 
 
