@@ -10,6 +10,8 @@ class CustomerController extends Controller
 {
     //
     public function index(){
+        $customer= Customer::all();
+       return view('manger.manager',compact($customer));
 
     }
 
