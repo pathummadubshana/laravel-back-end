@@ -18,11 +18,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('manager/customer/view',[\App\Http\Controllers\CustomerController::class, 'index']);
 Route::post('owner/customer/add',[\App\Http\Controllers\CustomerController::class, 'store']);
 Route::put('manager/custom/{id}/update',[\App\Http\Controllers\CustomerController::class, 'update']);
 Route::delete('manager/custom/{id}/delete',[\App\Http\Controllers\CustomerController::class, 'destroy']);
 
+Route::get('cashier/item/view',[\App\Http\Controllers\ItemController::class, 'index']);
 Route::post('owner/item/add',[\App\Http\Controllers\ItemController::class, 'store']);
-Route::put('manager/item/{id}/update',[\App\Http\Controllers\ItemController::class, 'update']);
-Route::delete('manager/item/{id}/delete',[\App\Http\Controllers\ItemController::class, 'destroy']);
+Route::put('cashierr/item/{id}/update',[\App\Http\Controllers\ItemController::class, 'update']);
+Route::delete('cashier/item/{id}/delete',[\App\Http\Controllers\ItemController::class, 'destroy']);
 
